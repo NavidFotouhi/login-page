@@ -1,0 +1,111 @@
+:root {
+  --bg: #0e3b43;
+  --card: #f2f7f5;
+  --ink: #102a2e;
+  --muted: #5b7377;
+  --line: #c3d4d1;
+  --amber: #f2b134;
+  --coral: #c8374b;
+  --green: #1f7a5a;
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  padding: 36px 32px 32px;
+  background: var(--card);
+  border-radius: 6px 28px 6px 28px;
+}
+
+/* ---------- کلید ---------- */
+.key {
+  display: block;
+  width: 190px;
+  margin: 0 auto 20px;
+  direction: ltr;
+}
+.key-head, .key-shaft { fill: var(--ink); }
+.key-hole { fill: var(--card); }
+.tooth {
+  fill: var(--line);
+  transform-box: fill-box;
+  transform-origin: top;
+  transform: scaleY(0.2);
+  transition: transform 0.35s cubic-bezier(0.3, 1.4, 0.5, 1), fill 0.2s;
+}
+.tooth.on {
+  fill: var(--amber);
+  transform: scaleY(1);
+}
+h1 { font-size: 1.5rem; font-weight: 800; text-align: center; margin-bottom: 26px; }
+.sub { color: var(--muted); text-align: center; margin: 6px 0 26px; font-size: 0.95rem; }
+
+/* ---------- فرم ---------- */
+.field { margin-bottom: 18px; }
+label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.95rem; }
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  text-align: left;
+}
+input::placeholder { color: #9bb0ad; }
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
+input.invalid { border-color: var(--coral); }
+
+.pass-wrap { position: relative; }
+.pass-wrap input { padding-right: 14px; padding-left: 70px; }
+.toggle {
+  position: absolute;
+  left: 8px; top: 50%;
+  transform: translateY(-50%);
+  padding: 6px 10px;
+  font: inherit; font-size: 0.85rem;
+  background: none; border: none;
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.strength { margin-top: 6px; font-size: 0.85rem; color: var(--muted); }
+.error { min-height: 1.2em; margin-top: 4px; font-size: 0.85rem; color: var(--coral); }
+
+.submit {
+  width: 100%;
+  padding: 13px;
+  font: inherit; font-weight: 800; font-size: 1rem;
+  color: var(--card);
+  background: var(--ink);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.submit:hover { background: #1b4a52; }
+
+.result { margin-top: 14px; text-align: center; font-weight: 600; color: var(--green); min-height: 1.4em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tooth, .submit { transition: none; }
+}
