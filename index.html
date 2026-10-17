@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ورود | پروژه مهندسی نرم‌افزار</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+
+    <!-- کلید: دندانه‌ها با قوی‌تر شدن رمز بلند می‌شن -->
+    <svg class="key" viewBox="0 0 240 60" aria-hidden="true">
+      <circle class="key-head" cx="32" cy="30" r="22"/>
+      <circle class="key-hole" cx="32" cy="30" r="7"/>
+      <rect class="key-shaft" x="52" y="26" width="178" height="8" rx="2"/>
+      <rect class="tooth" x="104" y="34" width="14" height="20" rx="2"/>
+      <rect class="tooth" x="126" y="34" width="14" height="20" rx="2"/>
+      <rect class="tooth" x="148" y="34" width="14" height="20" rx="2"/>
+      <rect class="tooth" x="170" y="34" width="14" height="20" rx="2"/>
+      <rect class="tooth" x="192" y="34" width="14" height="20" rx="2"/>
+      <rect class="tooth" x="214" y="34" width="14" height="20" rx="2"/>
+    </svg>
+
+    <h1>وارد حساب خودت شو</h1>
+
+    <form id="loginForm" novalidate>
+      <div class="field">
+        <label for="email">ایمیل</label>
+        <input type="email" id="email" name="email" placeholder="name@example.com" dir="ltr" autocomplete="email">
+        <p class="error" id="emailError" role="alert"></p>
+      </div>
+
+      <div class="field">
+        <label for="password">رمز عبور</label>
+        <div class="pass-wrap">
+          <input type="password" id="password" name="password" placeholder="حداقل ۸ کاراکتر" dir="ltr" autocomplete="current-password">
+          <button type="button" id="toggle" class="toggle" aria-label="نمایش رمز">نمایش</button>
+        </div>
+        <p class="strength" id="strengthText">هنوز چیزی ننوشتی</p>
+        <p class="error" id="passError" role="alert"></p>
+      </div>
+
+      <button type="submit" class="submit">ورود</button>
+      <p class="result" id="result" role="status"></p>
+    </form>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
